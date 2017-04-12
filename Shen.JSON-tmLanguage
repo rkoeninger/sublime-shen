@@ -1,0 +1,41 @@
+{
+  "name": "Shen",
+  "scopeName": "source.shen",
+  "fileTypes": ["shen"],
+  "patterns": [
+    {
+      "name": "string.quoted.double.source.shen",
+      "begin": "\"",
+      "end": "\""
+    },
+    {
+      "name": "meta.variable.source.shen",
+      "match": "\\((define)\\s+([a-zA-Z0-9_\\-?\\+^]+)\\s*",
+      "captures": {
+        "1": {"name": "keyword.source.shen"},
+        "2": {"name": "entity.name.variable.source.shen"}
+      }
+    },
+    {
+      "name": "meta.keywords.source.shen",
+      "match": "\\b(and|or|if|lambda|freeze|let|cond|simple-error|trap-error|defun|define|defmacro|defcc)[\\s\\)]",
+      "captures": {
+        "1": {"name": "keyword.source.shen"}
+      }
+    },
+    {
+      "name": "constant.language.source.shen",
+      "match": "\\b(true|false|\(\))[\\s\\)]"
+    },
+    {
+      "name": "constant.numeric.integer.source.shen",
+      "match": "\\b(0|([1-9][0-9_]*))\\b"
+    },
+    {
+      "name": "comment.line.documentation.source.shen",
+      "begin": "\\\\",
+      "end": "$\\n"
+    }
+  ],
+  "uuid": "4f20d927-cddd-4fd7-a7a6-9739f008439d"
+}
