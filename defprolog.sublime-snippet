@@ -1,0 +1,7 @@
+<snippet>
+	<description>Prolog Definition</description>
+	<content><![CDATA[(defprolog name
+	 <-- ;)]]></content>
+	<tabTrigger>pdefprolog</tabTrigger>
+	<scope>source.shen</scope>
+</snippet>

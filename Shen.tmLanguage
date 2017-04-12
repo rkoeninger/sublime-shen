@@ -51,7 +51,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>[\s\(](and|or|if|lambda|freeze|let|cond|simple-error|trap-error|defun|define|defmacro|defcc)[\s\)]</string>
+			<string>[\s\(](and|or|if|lambda|freeze|let|cond|simple-error|trap-error|defun|define|defmacro|defcc|defprolog)[\s\)]</string>
 			<key>name</key>
 			<string>meta.keywords.source.shen</string>
 		</dict>

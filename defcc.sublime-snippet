@@ -1,0 +1,7 @@
+<snippet>
+	<description>Grammar Definition</description>
+	<content><![CDATA[(defcc name
+	)]]></content>
+	<tabTrigger>pdefcc</tabTrigger>
+	<scope>source.shen</scope>
+</snippet>

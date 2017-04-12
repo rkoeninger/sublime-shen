@@ -1,0 +1,7 @@
+<snippet>
+	<description>Typed Function Definition</description>
+	<content><![CDATA[(define name {A --> B}
+	_ -> ())]]></content>
+	<tabTrigger>pdeftyped</tabTrigger>
+	<scope>source.shen</scope>
+</snippet>
