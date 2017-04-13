@@ -1,7 +1,7 @@
 <snippet>
-	<description>Function Definition</description>
-	<content><![CDATA[(define name
-	_ -> ())]]></content>
-	<tabTrigger>pdef</tabTrigger>
+	<description>Shen Function Definition</description>
+	<content><![CDATA[(define …
+	… -> …)]]></content>
+	<tabTrigger>def</tabTrigger>
 	<scope>source.shen</scope>
 </snippet>

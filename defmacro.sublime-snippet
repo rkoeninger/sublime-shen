@@ -1,7 +1,7 @@
 <snippet>
-	<description>Macro Definition</description>
-	<content><![CDATA[(defmacro name
-	[] -> [])]]></content>
-	<tabTrigger>pdefmacro</tabTrigger>
+	<description>Shen Macro Definition</description>
+	<content><![CDATA[(defmacro …
+	[…] -> […])]]></content>
+	<tabTrigger>defm</tabTrigger>
 	<scope>source.shen</scope>
 </snippet>

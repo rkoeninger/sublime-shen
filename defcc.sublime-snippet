@@ -1,7 +1,7 @@
 <snippet>
-	<description>Grammar Definition</description>
-	<content><![CDATA[(defcc name
-	)]]></content>
-	<tabTrigger>pdefcc</tabTrigger>
+	<description>Shen Yacc Grammar Definition</description>
+	<content><![CDATA[(defcc …
+	…;)]]></content>
+	<tabTrigger>defc</tabTrigger>
 	<scope>source.shen</scope>
 </snippet>

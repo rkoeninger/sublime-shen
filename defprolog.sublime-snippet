@@ -1,7 +1,7 @@
 <snippet>
-	<description>Prolog Definition</description>
-	<content><![CDATA[(defprolog name
-	 <-- ;)]]></content>
-	<tabTrigger>pdefprolog</tabTrigger>
+	<description>Shen Prolog Definition</description>
+	<content><![CDATA[(defprolog …
+	… <-- …;)]]></content>
+	<tabTrigger>defp</tabTrigger>
 	<scope>source.shen</scope>
 </snippet>
