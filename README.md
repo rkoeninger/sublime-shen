@@ -6,7 +6,8 @@
 
   * Syntax highlighting - detects files matching the pattern `*.shen`.
   * Comments - Applies Shen-style single line (`\\`) and multi-line (`\* ... *\`) comments using standard commands/shortcuts.
-  * Code snippets - generate skeleton forms for `define`, `defmacro`, `defcc`, `defprolog`, etc.
+  * Snippets - generate skeleton forms for `define`, `defmacro`, `defcc`, `defprolog`, etc.
+  * **WORK IN PROGRESS** Formatting
 
 ## Automatic Installation
 
