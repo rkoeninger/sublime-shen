@@ -2,6 +2,6 @@
 	<description>Shen Function Definition</description>
 	<content><![CDATA[(define …
 	… -> …)]]></content>
-	<tabTrigger>def</tabTrigger>
+	<tabTrigger>define</tabTrigger>
 	<scope>source.shen</scope>
 </snippet>

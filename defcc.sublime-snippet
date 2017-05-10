@@ -1,7 +1,7 @@
 <snippet>
 	<description>Shen Yacc Grammar Definition</description>
-	<content><![CDATA[(defcc …
+	<content><![CDATA[(defcc <…>
 	…;)]]></content>
-	<tabTrigger>defc</tabTrigger>
+	<tabTrigger>defcc</tabTrigger>
 	<scope>source.shen</scope>
 </snippet>

@@ -2,6 +2,6 @@
 	<description>Shen Prolog Definition</description>
 	<content><![CDATA[(defprolog …
 	… <-- …;)]]></content>
-	<tabTrigger>defp</tabTrigger>
+	<tabTrigger>defprolog</tabTrigger>
 	<scope>source.shen</scope>
 </snippet>
