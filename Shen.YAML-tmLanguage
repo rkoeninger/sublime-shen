@@ -1,0 +1,78 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+
+name: Shen
+scopeName: source.shen
+fileTypes: [shen]
+uuid: 4f20d927-cddd-4fd7-a7a6-9739f008439d
+
+patterns:
+- include: '#comments'
+- include: '#parens'
+
+repository:
+
+  comments:
+    patterns:
+    - name: comment.line.documentation.source.shen
+      begin: \\\\
+      end: $\n
+
+    - name: comment.block.source.shen
+      begin: \\\*
+      end: \*\\
+
+  parens:
+    patterns:
+    - name: meta.group.shen
+      begin: \(
+      beginCaptures:
+        '0': {name: punctuation.definition.group.begin.shen}
+      end: \)
+      endCaptures:
+        '0': {name: punctuation.definition.group.end.shen}
+      patterns:
+      - include: '#expressions'
+      - include: '#parens'
+      - include: '#squares'
+
+  squares:
+    patterns:
+    - name: meta.group.shen
+      begin: \[
+      beginCaptures:
+        '0': {name: punctuation.definition.group.begin.shen}
+      end: \]
+      endCaptures:
+        '0': {name: punctuation.definition.group.end.shen}
+      patterns:
+      - include: '#expressions'
+      - include: '#parens'
+      - include: '#squares'
+
+  expressions:
+    patterns:
+    - include: '#comments'
+    - include: '#strings'
+    - include: '#literals'
+    - include: '#keywords'
+
+  strings:
+    patterns:
+    - name: string.quoted.double.source.shen
+      match: "[^\\\\](\\\"[^\\\"]*\\\")"
+
+  literals:
+    patterns:
+    - name: constant.numeric.integer.source.shen
+      match: "[\\s\\(][\\-\\+]*(0|([1-9][0-9_]*))[\\s\\(]"
+
+    - name: constant.language.source.shen
+      match: "[\\s\\(](true|false|\\(\\))[\\s\\)]"
+
+  keywords:
+    patterns:
+    - name: meta.keywords.source.shen
+      match: "[\\s\\(](and|or|if|lambda|freeze|let|cond|simple-error|trap-error|where|package|defun|/.|->|<-|:=|define|defmacro|defcc|defprolog)[\\s\\)]"
+
+...
