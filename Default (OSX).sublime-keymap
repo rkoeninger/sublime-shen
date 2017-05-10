@@ -1,0 +1,6 @@
+[
+  {
+    "keys": ["alt+f"],
+    "command": "format_shen"
+  }
+]
