@@ -18,7 +18,7 @@
     },
     {
       "name": "meta.keywords.source.shen",
-      "match": "\\b(and|or|if|lambda|freeze|let|cond|simple-error|trap-error|defun|define|defmacro|defcc|defprolog)[\\s\\)]",
+      "match": "\\b(and|or|if|lambda|freeze|let|cond|simple-error|trap-error|where|package|->|<-|:=|defun|define|defmacro|defcc|defprolog)[\\s\\)]",
       "captures": {
         "1": {"name": "keyword.source.shen"}
       }
