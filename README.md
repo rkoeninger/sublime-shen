@@ -1,6 +1,6 @@
 # Sublime/Shen
 
-[Shen language](http://www.shenlanguage.org/) support for the [Sublime text editor](https://www.sublimetext.com/).
+[Shen language](http://www.shenlanguage.org/) support for the [Sublime Text 3](https://www.sublimetext.com/).
 
 ## Features
 
