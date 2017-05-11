@@ -25,12 +25,12 @@
      comment *\
 
   (define typed-function {A --> (list A) --> boolean}
-    _ [] -> (true 0 false)
+    _ [] -> (true 0123 false)
     X [X | _] -> true \\ end of line comment
-    X [{ | Xs] -> [0 X Xs ()])
+    X [{ | Xs] -> [0a X Xs ()])
 
   (defmacro syntax-magic
-    [@p] -> [} +++---+012323])
+    [@p] -> [} ++--+-+012323.2434])
 
   (define conditionals
     X Y Z -> (if (and X Y) (or (and Y X) Z) (not (and Y X))))
