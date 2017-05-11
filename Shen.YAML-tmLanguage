@@ -16,7 +16,6 @@ repository:
     patterns:
     - name: comment.line.documentation.source.shen
       match: '\\\\.*$'
-
     - name: comment.block.source.shen
       begin: '\\\*'
       end: '\*\\'
@@ -66,20 +65,19 @@ repository:
       endCaptures:
         '0': {name: punctuation.definition.string.end.shen}
       patterns:
-      - match: '(~A|~R|~S|~%|c#\d;|c#\d\d;|c#\d\d\d;)'
+      - match: (~A|~R|~S|~%|c#\d;|c#\d\d;|c#\d\d\d;)
         name: constant.character.escape.shen
 
   literals:
     patterns:
     - name: constant.numeric.integer.source.shen
-      match: "[\\s\\(][\\-\\+]*(0|([1-9][0-9_]*))[\\s\\(]"
-
+      match: (?<=^|['\s()])[+-]*\d+\.?\d*(?=$|[\s()])
     - name: constant.language.source.shen
-      match: "[\\s\\(](true|false|\\(\\))[\\s\\)]"
+      match: ((?<=^|['\s()])(?i:true|false)(?=$|[\s()])|\(\))
 
   keywords:
     patterns:
     - name: meta.keywords.source.shen
-      match: "[\\s\\(](and|or|if|lambda|freeze|let|cond|simple-error|trap-error|where|package|defun|/.|->|<-|:=|define|defmacro|defcc|defprolog)[\\s\\)]"
+      match: (?<=^|['\s()])(?i:and|or|if|lambda|freeze|let|cond|simple-error|trap-error|where|package|defun|/.|->|<-|:=|define|defmacro|defcc|defprolog)(?=$|[\s()])
 
 ...
