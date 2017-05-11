@@ -15,10 +15,10 @@ repository:
   comments:
     patterns:
     - name: comment.line.documentation.source.shen
-      match: '\\\\.*$'
+      match: \\\\.*$
     - name: comment.block.source.shen
-      begin: '\\\*'
-      end: '\*\\'
+      begin: \\\*
+      end: \*\\
 
   parens:
     patterns:
