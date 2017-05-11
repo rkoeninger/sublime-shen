@@ -32,26 +32,18 @@
   (defmacro syntax-magic
     [@p] -> [} ++--+-+012323.2434])
 
-  (define conditionals
-    X Y Z -> (if (and X Y) (or (and Y X) Z) (not (and Y X))))
-
   "package-level string"
 
   (defcc <rule>
     <patterns> -> <action> where <guard> := [<patterns> [where <guard> <action>]];
-    <patterns> -> <action> := [<patterns> <action>];
     <patterns> <- <action> where <guard>
-        := [<patterns> [where <guard> [choicepoint! <action>]]];
-    <patterns> <- <action> := [<patterns> [choicepoint! <action>]];)
+        := [<patterns> [where <guard> [choicepoint! <action>]]];)
 
   (define strings ->
     (do
       (output "~%Shen, copyright c#123; 2010-2015 Mark Tarver~%")
       (output "www.shenlanguage.org, ~A~%"
         (value *version*))
-      (output "running under ~A, implementation: ~A"
-        (value *language*)
-        (value *implementation*))
       (output "~%port ~A ported by ~A~%"
         (value *port*)
         (value *porters*))))
