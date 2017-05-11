@@ -59,7 +59,15 @@ repository:
   strings:
     patterns:
     - name: string.quoted.double.source.shen
-      match: "[^\\\\](\\\"[^\\\"]*\\\")"
+      begin: '"'
+      beginCaptures:
+        '0': {name: punctuation.definition.string.begin.shen}
+      end: '"'
+      endCaptures:
+        '0': {name: punctuation.definition.string.end.shen}
+      patterns:
+      - match: '(~A|~R|~S|~%|c#\d;|c#\d\d;|c#\d\d\d;)'
+        name: constant.character.escape.shen
 
   literals:
     patterns:
