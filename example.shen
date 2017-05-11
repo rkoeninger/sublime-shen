@@ -15,7 +15,7 @@
     (do
       (set *language* (value *custom*))
       (trap-error
-        (simple-error "whoops!")
+        (do (simple-error "whoops!") (error "oh, no!"))
         (/. E (print (error-to-string E) (stoutput))))
       skip))
 
@@ -40,13 +40,15 @@
         := [<patterns> [where <guard> [choicepoint! <action>]]];)
 
   (define strings ->
-    (do
-      (output "~%Shen, copyright c#123; 2010-2015 Mark Tarver~%")
-      (output "www.shenlanguage.org, ~A~%"
-        (value *version*))
-      (output "~%port ~A ported by ~A~%"
-        (value *port*)
-        (value *porters*))))
+    (case
+      (= X (and Y Z))
+        (output "~%Shen, copyright c#123; 2010-2015 Mark Tarver~%")
+      (not (< Qwe Asd))
+        (output "www.shenlanguage.org, ~A~%" (value *version*))
+      true
+        (output "~%port ~A ported by ~A~%"
+          (value *port*)
+          (value *porters*))))
 
   (defprolog mem
     X [X | _] <--;

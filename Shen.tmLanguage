@@ -128,7 +128,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|simple-error|error|trap-error|where|package|defun|/.|-&gt;|&lt;-|--&gt;|&lt;--|:=|define|defmacro|defcc|defprolog)(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|case|trap-error|where|package|defun|/.|-&gt;|&lt;-|--&gt;|&lt;--|:=|define|defmacro|defcc|defprolog)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>keyword.control</string>
 				</dict>
@@ -260,7 +260,7 @@
 					<key>match</key>
 					<string>(?&lt;=defcc\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
-					<string>entity.name.function</string>
+					<string>entity.name.tag</string>
 				</dict>
 				<dict>
 					<key>comment</key>
@@ -276,7 +276,7 @@
 					<key>match</key>
 					<string>(?&lt;=package\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
-					<string>entity.name.function</string>
+					<string>entity.name.section</string>
 				</dict>
 				<dict>
 					<key>comment</key>
@@ -285,6 +285,14 @@
 					<string>(?&lt;=^|[\s()\[\]{}])([A-Z][^\s()\[\]]*)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>variable.language</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Yacc Rule</string>
+					<key>match</key>
+					<string>(?&lt;=^|[\s()\[\]])(&lt;[^\s()\[\]]*&gt;)(?=$|[\s;()\[\]])</string>
+					<key>name</key>
+					<string>entity.name.tag</string>
 				</dict>
 			</array>
 		</dict>

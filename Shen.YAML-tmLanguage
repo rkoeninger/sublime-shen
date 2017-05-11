@@ -76,7 +76,7 @@ repository:
   special:
     patterns:
     - name: keyword.control
-      match: (?<=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|simple-error|error|trap-error|where|package|defun|/.|->|<-|-->|<--|:=|define|defmacro|defcc|defprolog)(?=$|[\s;()\[\]{}])
+      match: (?<=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|case|trap-error|where|package|defun|/.|->|<-|-->|<--|:=|define|defmacro|defcc|defprolog)(?=$|[\s;()\[\]{}])
 
   standard:
     patterns:
@@ -98,20 +98,20 @@ repository:
       name: entity.name.function
       match: (?<=defmacro\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
     - comment: Yacc Names
-      name: entity.name.function
+      name: entity.name.tag
       match: (?<=defcc\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
     - comment: Prolog Names
       name: entity.name.function
       match: (?<=defprolog\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
     - comment: Package Names
-      name: entity.name.function
+      name: entity.name.section
       match: (?<=package\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
     - comment: Local Variables
       name: variable.language
       match: (?<=^|[\s()\[\]{}])([A-Z][^\s()\[\]]*)(?=$|[\s;()\[\]{}])
-    # - comment: Yacc Rule
-    #   name: variable.other
-    #   match: (?<=^|[\s()\[\]])(<[^\s()\[\]]*>)(?=$|[\s;()\[\]])
+    - comment: Yacc Rule
+      name: entity.name.tag
+      match: (?<=^|[\s()\[\]])(<[^\s()\[\]]*>)(?=$|[\s;()\[\]])
     # - comment: Idle Symbol
     #   name: constant.language
     #   match: (?<=^|[\s)\[\]])([^A-Z\s()\[\]\|][^\s()\[\]]*)(?=$|[\s;()\[\]])
