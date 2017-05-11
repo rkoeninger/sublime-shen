@@ -112,24 +112,8 @@
 				<dict>
 					<key>begin</key>
 					<string>\(</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.group.begin</string>
-						</dict>
-					</dict>
 					<key>end</key>
 					<string>\)</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.group.end</string>
-						</dict>
-					</dict>
 					<key>name</key>
 					<string>meta.group</string>
 					<key>patterns</key>
@@ -157,24 +141,8 @@
 				<dict>
 					<key>begin</key>
 					<string>\[</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.group.begin</string>
-						</dict>
-					</dict>
 					<key>end</key>
 					<string>\]</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.group.end</string>
-						</dict>
-					</dict>
 					<key>name</key>
 					<string>meta.group</string>
 					<key>patterns</key>
@@ -232,24 +200,8 @@
 				<dict>
 					<key>begin</key>
 					<string>"</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.begin</string>
-						</dict>
-					</dict>
 					<key>end</key>
 					<string>"</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.end</string>
-						</dict>
-					</dict>
 					<key>name</key>
 					<string>string.quoted.double</string>
 					<key>patterns</key>

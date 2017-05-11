@@ -24,11 +24,7 @@ repository:
     patterns:
     - name: meta.group
       begin: \(
-      beginCaptures:
-        '0': {name: punctuation.definition.group.begin}
       end: \)
-      endCaptures:
-        '0': {name: punctuation.definition.group.end}
       patterns:
       - include: '#expressions'
       - include: '#parens'
@@ -38,11 +34,7 @@ repository:
     patterns:
     - name: meta.group
       begin: \[
-      beginCaptures:
-        '0': {name: punctuation.definition.group.begin}
       end: \]
-      endCaptures:
-        '0': {name: punctuation.definition.group.end}
       patterns:
       - include: '#expressions'
       - include: '#parens'
@@ -59,11 +51,7 @@ repository:
     patterns:
     - name: string.quoted.double
       begin: '"'
-      beginCaptures:
-        '0': {name: punctuation.definition.string.begin}
       end: '"'
-      endCaptures:
-        '0': {name: punctuation.definition.string.end}
       patterns:
       - match: (~A|~R|~S|~%|c#\d;|c#\d\d;|c#\d\d\d;)
         name: constant.character.escape
