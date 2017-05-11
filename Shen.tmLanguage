@@ -63,31 +63,19 @@
 				</dict>
 			</array>
 		</dict>
-		<key>keywords</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]])(and|or|if|do|lambda|freeze|let|cond|simple-error|error|trap-error|where|package|defun|/.|-&gt;|&lt;-|:=|define|defmacro|defcc|defprolog)(?=$|[\s()\[\]])</string>
-					<key>name</key>
-					<string>keyword.control</string>
-				</dict>
-			</array>
-		</dict>
 		<key>literals</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]])[+-]*\d+\.?\d*(?=$|[\s()\[\]])</string>
+					<string>(?&lt;=^|[\s()\[\]{}])[+-]*\d+\.?\d*(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>constant.numeric</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]])(true|false)(?=$|[\s()\[\]])</string>
+					<string>(?&lt;=^|[\s()\[\]{}])(true|false)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>constant.language</string>
 				</dict>
@@ -99,7 +87,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]])_(?=$|[\s()\[\]])</string>
+					<string>(?&lt;=^|[\s()\[\]{}])_(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>constant.language</string>
 				</dict>
@@ -131,6 +119,18 @@
 							<string>#squares</string>
 						</dict>
 					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>special</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|simple-error|error|trap-error|where|package|defun|/.|-&gt;|&lt;-|--&gt;|&lt;--|:=|define|defmacro|defcc|defprolog)(?=$|[\s;()\[\]{}])</string>
+					<key>name</key>
+					<string>keyword.control</string>
 				</dict>
 			</array>
 		</dict>
@@ -169,25 +169,25 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]])(?i:=|&lt;|&gt;|&lt;=|&gt;=|\+|-|\*|/)(?=$|[\s()\[\]])</string>
+					<string>(?&lt;=^|[\s()\[\]{}])(=|&lt;|&gt;|&lt;=|&gt;=|\+|-|\*|/)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>keyword.operator</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]])(eval-kl|get|put|set|value|fail|not|intern|output|print|map|for-each|append|length|cons|hd|tl|cn|str|string\?|boolean\?|symbol\?|number\?|empty\?|cons\?)(?=$|[\s()\[\]])</string>
+					<string>(?&lt;=^|[\s()\[\]{}])(eval-kl|get|put|set|value|fail|not|intern|output|print|map|for-each|append|length|cons|hd|tl|cn|str|string\?|boolean\?|symbol\?|number\?|empty\?|cons\?)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>support.function</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]])\*(language|implementation|version|release|os|port|porters|home-directory|history|call|infs|process-counter|catch|tc|continue-repl-loop)\*(?=$|[\s()\[\]])</string>
+					<string>(?&lt;=^|[\s()\[\]{}])\*(language|implementation|version|release|os|port|porters|home-directory|history|call|infs|process-counter|catch|tc|continue-repl-loop)\*(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>support.variable</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]])(string|boolean|symbol|number|list)(?=$|[\s()\[\]])</string>
+					<string>(?&lt;=^|[\s()\[\]{}])(string|boolean|symbol|number|list)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>support.type</string>
 				</dict>
@@ -222,7 +222,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#keywords</string>
+					<string>#special</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -239,22 +239,52 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>comment</key>
+					<string>Definition Names</string>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]])([A-Z][^\s()\[\]]*)(?=$|[\s()\[\]])</string>
+					<string>(?&lt;=define\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
+					<key>name</key>
+					<string>entity.name.function</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Macro Names</string>
+					<key>match</key>
+					<string>(?&lt;=defmacro\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
+					<key>name</key>
+					<string>entity.name.function</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Yacc Names</string>
+					<key>match</key>
+					<string>(?&lt;=defcc\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
+					<key>name</key>
+					<string>entity.name.function</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Prolog Names</string>
+					<key>match</key>
+					<string>(?&lt;=defprolog\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
+					<key>name</key>
+					<string>entity.name.function</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Package Names</string>
+					<key>match</key>
+					<string>(?&lt;=package\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
+					<key>name</key>
+					<string>entity.name.function</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Local Variables</string>
+					<key>match</key>
+					<string>(?&lt;=^|[\s()\[\]{}])([A-Z][^\s()\[\]]*)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>variable.language</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]])(&lt;[^\s()\[\]]*&gt;)(?=$|[\s()\[\]])</string>
-					<key>name</key>
-					<string>variable.other</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;=^|[\s)\[\]])([^A-Z\s()\[\]\|][^\s()\[\]]*)(?=$|[\s()\[\]])</string>
-					<key>name</key>
-					<string>constant.language</string>
 				</dict>
 			</array>
 		</dict>

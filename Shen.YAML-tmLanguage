@@ -59,44 +59,61 @@ repository:
   literals:
     patterns:
     - name: constant.numeric
-      match: (?<=^|[\s()\[\]])[+-]*\d+\.?\d*(?=$|[\s()\[\]])
+      match: (?<=^|[\s()\[\]{}])[+-]*\d+\.?\d*(?=$|[\s;()\[\]{}])
     - name: constant.language
-      match: (?<=^|[\s()\[\]])(true|false)(?=$|[\s()\[\]])
+      match: (?<=^|[\s()\[\]{}])(true|false)(?=$|[\s;()\[\]{}])
     - name: constant.language
       match: \(\)
     - name: constant.language
-      match: (?<=^|[\s()\[\]])_(?=$|[\s()\[\]])
+      match: (?<=^|[\s()\[\]{}])_(?=$|[\s;()\[\]{}])
 
   symbols:
     patterns:
-    - include: '#keywords'
+    - include: '#special'
     - include: '#standard'
     - include: '#variables'
 
-  keywords:
+  special:
     patterns:
     - name: keyword.control
-      match: (?<=^|[\s()\[\]])(and|or|if|do|lambda|freeze|let|cond|simple-error|error|trap-error|where|package|defun|/.|->|<-|:=|define|defmacro|defcc|defprolog)(?=$|[\s()\[\]])
+      match: (?<=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|simple-error|error|trap-error|where|package|defun|/.|->|<-|-->|<--|:=|define|defmacro|defcc|defprolog)(?=$|[\s;()\[\]{}])
 
   standard:
     patterns:
     - name: keyword.operator
-      match: (?<=^|[\s()\[\]])(?i:=|<|>|<=|>=|\+|-|\*|/)(?=$|[\s()\[\]])
+      match: (?<=^|[\s()\[\]{}])(=|<|>|<=|>=|\+|-|\*|/)(?=$|[\s;()\[\]{}])
     - name: support.function
-      match: (?<=^|[\s()\[\]])(eval-kl|get|put|set|value|fail|not|intern|output|print|map|for-each|append|length|cons|hd|tl|cn|str|string\?|boolean\?|symbol\?|number\?|empty\?|cons\?)(?=$|[\s()\[\]])
+      match: (?<=^|[\s()\[\]{}])(eval-kl|get|put|set|value|fail|not|intern|output|print|map|for-each|append|length|cons|hd|tl|cn|str|string\?|boolean\?|symbol\?|number\?|empty\?|cons\?)(?=$|[\s;()\[\]{}])
     - name: support.variable
-      match: (?<=^|[\s()\[\]])\*(language|implementation|version|release|os|port|porters|home-directory|history|call|infs|process-counter|catch|tc|continue-repl-loop)\*(?=$|[\s()\[\]])
+      match: (?<=^|[\s()\[\]{}])\*(language|implementation|version|release|os|port|porters|home-directory|history|call|infs|process-counter|catch|tc|continue-repl-loop)\*(?=$|[\s;()\[\]{}])
     - name: support.type
-      match: (?<=^|[\s()\[\]])(string|boolean|symbol|number|list)(?=$|[\s()\[\]])
+      match: (?<=^|[\s()\[\]{}])(string|boolean|symbol|number|list)(?=$|[\s;()\[\]{}])
 
   variables:
     patterns:
-    - name: variable.language
-      match: (?<=^|[\s()\[\]])([A-Z][^\s()\[\]]*)(?=$|[\s()\[\]])
-    - name: variable.other
-      match: (?<=^|[\s()\[\]])(<[^\s()\[\]]*>)(?=$|[\s()\[\]])
-    # TODO: symbols after define/defcc/defmacro/package are not idle
-    - name: constant.language
-      match: (?<=^|[\s)\[\]])([^A-Z\s()\[\]\|][^\s()\[\]]*)(?=$|[\s()\[\]])
+    - comment: Definition Names
+      name: entity.name.function
+      match: (?<=define\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+    - comment: Macro Names
+      name: entity.name.function
+      match: (?<=defmacro\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+    - comment: Yacc Names
+      name: entity.name.function
+      match: (?<=defcc\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+    - comment: Prolog Names
+      name: entity.name.function
+      match: (?<=defprolog\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+    - comment: Package Names
+      name: entity.name.function
+      match: (?<=package\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+    - comment: Local Variables
+      name: variable.language
+      match: (?<=^|[\s()\[\]{}])([A-Z][^\s()\[\]]*)(?=$|[\s;()\[\]{}])
+    # - comment: Yacc Rule
+    #   name: variable.other
+    #   match: (?<=^|[\s()\[\]])(<[^\s()\[\]]*>)(?=$|[\s;()\[\]])
+    # - comment: Idle Symbol
+    #   name: constant.language
+    #   match: (?<=^|[\s)\[\]])([^A-Z\s()\[\]\|][^\s()\[\]]*)(?=$|[\s;()\[\]])
 
 ...
