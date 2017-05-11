@@ -71,13 +71,13 @@ repository:
   literals:
     patterns:
     - name: constant.numeric.integer.source.shen
-      match: (?<=^|['\s()])[+-]*\d+\.?\d*(?=$|[\s()])
+      match: (?<=^|[\s()\[\]])[+-]*\d+\.?\d*(?=$|[\s()\[\]])
     - name: constant.language.source.shen
-      match: ((?<=^|['\s()])(?i:true|false)(?=$|[\s()])|\(\))
+      match: ((?<=^|[\s()\[\]])(?i:true|false)(?=$|[\s()\[\]])|\(\))
 
   keywords:
     patterns:
-    - name: meta.keywords.source.shen
-      match: (?<=^|['\s()])(?i:and|or|if|lambda|freeze|let|cond|simple-error|trap-error|where|package|defun|/.|->|<-|:=|define|defmacro|defcc|defprolog)(?=$|[\s()])
+    - name: keyword.control.source.shen
+      match: (?<=^|[\s()\[\]])(?i:and|or|if|lambda|freeze|let|cond|simple-error|trap-error|where|package|defun|/.|->|<-|:=|define|defmacro|defcc|defprolog)(?=$|[\s()\[\]])
 
 ...
