@@ -29,7 +29,7 @@
 					<key>match</key>
 					<string>\\\\.*$</string>
 					<key>name</key>
-					<string>comment.line.documentation.source.shen</string>
+					<string>comment.line</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -37,7 +37,7 @@
 					<key>end</key>
 					<string>\*\\</string>
 					<key>name</key>
-					<string>comment.block.source.shen</string>
+					<string>comment.block</string>
 				</dict>
 			</array>
 		</dict>
@@ -59,11 +59,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#keywords</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#variables</string>
+					<string>#symbols</string>
 				</dict>
 			</array>
 		</dict>
@@ -73,9 +69,9 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]])(and|or|if|lambda|freeze|let|cond|simple-error|trap-error|where|package|defun|/.|-&gt;|&lt;-|:=|define|defmacro|defcc|defprolog)(?=$|[\s()\[\]])</string>
+					<string>(?&lt;=^|[\s()\[\]])(and|or|if|do|lambda|freeze|let|cond|simple-error|error|trap-error|where|package|defun|/.|-&gt;|&lt;-|:=|define|defmacro|defcc|defprolog)(?=$|[\s()\[\]])</string>
 					<key>name</key>
-					<string>keyword.control.source.shen</string>
+					<string>keyword.control</string>
 				</dict>
 			</array>
 		</dict>
@@ -87,25 +83,25 @@
 					<key>match</key>
 					<string>(?&lt;=^|[\s()\[\]])[+-]*\d+\.?\d*(?=$|[\s()\[\]])</string>
 					<key>name</key>
-					<string>constant.numeric.source.shen</string>
+					<string>constant.numeric</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>(?&lt;=^|[\s()\[\]])(true|false)(?=$|[\s()\[\]])</string>
 					<key>name</key>
-					<string>constant.language.source.shen</string>
+					<string>constant.language</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>\(\)</string>
 					<key>name</key>
-					<string>constant.language.emptylist.source.shen</string>
+					<string>constant.language</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>(?&lt;=^|[\s()\[\]])_(?=$|[\s()\[\]])</string>
 					<key>name</key>
-					<string>constant.language.wildcard.souce.shen</string>
+					<string>constant.language</string>
 				</dict>
 			</array>
 		</dict>
@@ -121,7 +117,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.begin.shen</string>
+							<string>punctuation.definition.group.begin</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -131,11 +127,11 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.end.shen</string>
+							<string>punctuation.definition.group.end</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.group.shen</string>
+					<string>meta.group</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -166,7 +162,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.begin.shen</string>
+							<string>punctuation.definition.group.begin</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -176,11 +172,11 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.group.end.shen</string>
+							<string>punctuation.definition.group.end</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.group.shen</string>
+					<string>meta.group</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -199,6 +195,36 @@
 				</dict>
 			</array>
 		</dict>
+		<key>standard</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=^|[\s()\[\]])(?i:=|&lt;|&gt;|&lt;=|&gt;=|\+|-|\*|/)(?=$|[\s()\[\]])</string>
+					<key>name</key>
+					<string>keyword.operator</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=^|[\s()\[\]])(eval-kl|get|put|set|value|fail|not|intern|output|print|map|for-each|append|length|cons|hd|tl|cn|str|string\?|boolean\?|symbol\?|number\?|empty\?|cons\?)(?=$|[\s()\[\]])</string>
+					<key>name</key>
+					<string>support.function</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=^|[\s()\[\]])\*(language|implementation|version|release|os|port|porters|home-directory|history|call|infs|process-counter|catch|tc|continue-repl-loop)\*(?=$|[\s()\[\]])</string>
+					<key>name</key>
+					<string>support.variable</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=^|[\s()\[\]])(string|boolean|symbol|number|list)(?=$|[\s()\[\]])</string>
+					<key>name</key>
+					<string>support.type</string>
+				</dict>
+			</array>
+		</dict>
 		<key>strings</key>
 		<dict>
 			<key>patterns</key>
@@ -211,7 +237,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.string.begin.shen</string>
+							<string>punctuation.definition.string.begin</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -221,20 +247,38 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.string.end.shen</string>
+							<string>punctuation.definition.string.end</string>
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>string.quoted.double.source.shen</string>
+					<string>string.quoted.double</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>match</key>
 							<string>(~A|~R|~S|~%|c#\d;|c#\d\d;|c#\d\d\d;)</string>
 							<key>name</key>
-							<string>constant.character.escape.shen</string>
+							<string>constant.character.escape</string>
 						</dict>
 					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>symbols</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#keywords</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#standard</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#variables</string>
 				</dict>
 			</array>
 		</dict>
@@ -246,7 +290,19 @@
 					<key>match</key>
 					<string>(?&lt;=^|[\s()\[\]])([A-Z][^\s()\[\]]*)(?=$|[\s()\[\]])</string>
 					<key>name</key>
-					<string>variable.language.source.shen</string>
+					<string>variable.language</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=^|[\s()\[\]])(&lt;[^\s()\[\]]*&gt;)(?=$|[\s()\[\]])</string>
+					<key>name</key>
+					<string>variable.other</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=^|[\s)\[\]])([^A-Z\s()\[\]\|][^\s()\[\]]*)(?=$|[\s()\[\]])</string>
+					<key>name</key>
+					<string>constant.language</string>
 				</dict>
 			</array>
 		</dict>
