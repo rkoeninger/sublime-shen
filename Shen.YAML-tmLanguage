@@ -54,6 +54,7 @@ repository:
     - include: '#strings'
     - include: '#literals'
     - include: '#keywords'
+    - include: '#variables'
 
   strings:
     patterns:
@@ -70,7 +71,7 @@ repository:
 
   literals:
     patterns:
-    - name: constant.numeric.integer.source.shen
+    - name: constant.numeric.source.shen
       match: (?<=^|[\s()\[\]])[+-]*\d+\.?\d*(?=$|[\s()\[\]])
     - name: constant.language.source.shen
       match: ((?<=^|[\s()\[\]])(?i:true|false)(?=$|[\s()\[\]])|\(\))
@@ -79,5 +80,10 @@ repository:
     patterns:
     - name: keyword.control.source.shen
       match: (?<=^|[\s()\[\]])(?i:and|or|if|lambda|freeze|let|cond|simple-error|trap-error|where|package|defun|/.|->|<-|:=|define|defmacro|defcc|defprolog)(?=$|[\s()\[\]])
+
+  variables:
+    patterns:
+    - name: variable.language.source.shen
+      match: (?<=^|[\s()\[\]])([A-Z][^\s()\[\]]*)(?=$|[\s()\[\]])
 
 ...
