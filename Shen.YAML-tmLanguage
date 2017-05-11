@@ -74,7 +74,18 @@ repository:
     - name: constant.numeric.source.shen
       match: (?<=^|[\s()\[\]])[+-]*\d+\.?\d*(?=$|[\s()\[\]])
     - name: constant.language.source.shen
-      match: ((?<=^|[\s()\[\]])(true|false)(?=$|[\s()\[\]])|\(\))
+      match: (?<=^|[\s()\[\]])(true|false)(?=$|[\s()\[\]])
+    - name: constant.language.emptylist.source.shen
+      match: \(\)
+    - name: constant.language.wildcard.souce.shen
+      match: (?<=^|[\s()\[\]])_(?=$|[\s()\[\]])
+
+    # TODO: identify idle symbols as literals/constants
+    #       idle symbols start with lower-case and are
+    #       not in operator position
+    #       might have to do this after keyword recognition
+    #- name: constant.language.idlesymbol.source.shen
+    #  match: (?<=^|[\s)\[\]])([a-z][^\s()\[\]]*)(?=$|[\s()\[\]])
 
   keywords:
     patterns:

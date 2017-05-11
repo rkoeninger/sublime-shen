@@ -91,9 +91,21 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>((?&lt;=^|[\s()\[\]])(true|false)(?=$|[\s()\[\]])|\(\))</string>
+					<string>(?&lt;=^|[\s()\[\]])(true|false)(?=$|[\s()\[\]])</string>
 					<key>name</key>
 					<string>constant.language.source.shen</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\(\)</string>
+					<key>name</key>
+					<string>constant.language.emptylist.source.shen</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=^|[\s()\[\]])_(?=$|[\s()\[\]])</string>
+					<key>name</key>
+					<string>constant.language.wildcard.souce.shen</string>
 				</dict>
 			</array>
 		</dict>
