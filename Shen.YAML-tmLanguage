@@ -114,8 +114,11 @@ repository:
     - comment: Yacc Rule
       name: entity.name.tag
       match: (?<=^|[\s()\[\]])(<[^\s()\[\]]*>)(?=$|[\s;()\[\]])
-    # - comment: Idle Symbol
-    #   name: constant.language
-    #   match: (?<=^|[\s)\[\]])([^A-Z\s()\[\]\|][^\s()\[\]]*)(?=$|[\s;()\[\]])
+    - comment: Curlys as Idle Symbols
+      name: constant.language
+      match: (?<=^|[\s()\[\]])({|})(?=$|[\s;()\[\]])
+    - comment: Idle Symbols
+      name: constant.language
+      match: (?<=^|[\s)\[\]{}])([^A-Z\s()\[\];\|{}][^\s()\[\];]*)(?=$|[\s;()\[\]{}])
 
 ...

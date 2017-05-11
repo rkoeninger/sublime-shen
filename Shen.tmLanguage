@@ -300,6 +300,22 @@
 					<key>name</key>
 					<string>entity.name.tag</string>
 				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Curlys as Idle Symbols</string>
+					<key>match</key>
+					<string>(?&lt;=^|[\s()\[\]])({|})(?=$|[\s;()\[\]])</string>
+					<key>name</key>
+					<string>constant.language</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Idle Symbols</string>
+					<key>match</key>
+					<string>(?&lt;=^|[\s)\[\]{}])([^A-Z\s()\[\];\|{}][^\s()\[\];]*)(?=$|[\s;()\[\]{}])</string>
+					<key>name</key>
+					<string>constant.language</string>
+				</dict>
 			</array>
 		</dict>
 	</dict>

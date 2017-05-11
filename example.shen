@@ -16,6 +16,7 @@
       (set *language* (value *custom*))
       (trap-error
         (do (simple-error "whoops!") (error "oh, no!"))
+        (lambda E (output "~S" (error-to-string E)))
         (/. E (print (error-to-string E) (stoutput))))
       skip))
 
