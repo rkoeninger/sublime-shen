@@ -74,12 +74,12 @@ repository:
     - name: constant.numeric.source.shen
       match: (?<=^|[\s()\[\]])[+-]*\d+\.?\d*(?=$|[\s()\[\]])
     - name: constant.language.source.shen
-      match: ((?<=^|[\s()\[\]])(?i:true|false)(?=$|[\s()\[\]])|\(\))
+      match: ((?<=^|[\s()\[\]])(true|false)(?=$|[\s()\[\]])|\(\))
 
   keywords:
     patterns:
     - name: keyword.control.source.shen
-      match: (?<=^|[\s()\[\]])(?i:and|or|if|lambda|freeze|let|cond|simple-error|trap-error|where|package|defun|/.|->|<-|:=|define|defmacro|defcc|defprolog)(?=$|[\s()\[\]])
+      match: (?<=^|[\s()\[\]])(and|or|if|lambda|freeze|let|cond|simple-error|trap-error|where|package|defun|/.|->|<-|:=|define|defmacro|defcc|defprolog)(?=$|[\s()\[\]])
 
   variables:
     patterns:
