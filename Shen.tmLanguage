@@ -69,13 +69,19 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]{}])[+-]*\d+\.?\d*(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=^|[\s()\[\]])[+-]*\d+\.?\d*(?=$|[\s;()\[\]])</string>
 					<key>name</key>
 					<string>constant.numeric</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]{}])(true|false)(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=^|[\s()\[\]])[+-]*\d+\.?\d*[^\s;()\[\]]+(?=$|[\s;()\[\]])</string>
+					<key>name</key>
+					<string>invalid.illegal</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?&lt;=^|[\s()\[\]])(true|false)(?=$|[\s;()\[\]])</string>
 					<key>name</key>
 					<string>constant.language</string>
 				</dict>
@@ -87,7 +93,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]{}])_(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=^|[\s()\[\]])_(?=$|[\s;()\[\]])</string>
 					<key>name</key>
 					<string>constant.language</string>
 				</dict>
