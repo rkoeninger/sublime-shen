@@ -78,7 +78,7 @@ repository:
   special:
     patterns:
     - name: keyword.control
-      match: (?<=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|case|trap-error|where|package|defun|/.|->|<-|-->|<--|:=|define|defmacro|defcc|defprolog)(?=$|[\s;()\[\]{}])
+      match: (?<=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|case|trap-error|where|package|defun|/.|->|<-|-->|<--|:=|define|defmacro|defcc|defprolog|datatype)(?=$|[\s;()\[\]{}])
 
   standard:
     patterns:
@@ -108,15 +108,15 @@ repository:
     - comment: Package Names
       name: entity.name.section
       match: (?<=package\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+    - comment: Data Types
+      name: entity.name.type
+      match: (?<=datatype\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
     - comment: Local Variables
       name: variable.language
-      match: (?<=^|[\s()\[\]{}])([A-Z][^\s()\[\]]*)(?=$|[\s;()\[\]{}])
+      match: (?<=^|[\s()\[\]{}])([A-Z][^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
     - comment: Yacc Rule
       name: entity.name.tag
       match: (?<=^|[\s()\[\]])(<[^\s()\[\]]*>)(?=$|[\s;()\[\]])
-    - comment: Curlys as Idle Symbols
-      name: constant.language
-      match: (?<=^|[\s()\[\]])({|})(?=$|[\s;()\[\]])
     - comment: Idle Symbols
       name: constant.language
       match: (?<=^|[\s)\[\]{}])([^A-Z\s()\[\];\|{}][^\s()\[\];]*)(?=$|[\s;()\[\]{}])
