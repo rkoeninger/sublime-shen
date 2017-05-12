@@ -47,7 +47,7 @@
     <patterns> <- <action> where <guard> := [<patterns> [where <guard> [choicepoint! <action>]]];)
 
   (define strings ->
-    (case
+    (cases
       (= X (and Y Z))
         (output "~%Shen, copyright c#123; 2010-2015 Mark Tarver~%")
       (not (< Qwe Asd))

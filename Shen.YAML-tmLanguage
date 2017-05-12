@@ -78,7 +78,7 @@ repository:
 
     - comment: Special Forms
       name: keyword.control
-      match: (?<=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|case|trap-error|where|package|defun|/.|->|<-|-->|<--|:=|__+|define|defmacro|defcc|defprolog|datatype)(?=$|[\s;()\[\]{}])
+      match: (?<=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|cases|trap-error|where|package|defun|/.|->|<-|-->|<--|:=|__+|define|defmacro|defcc|defprolog|datatype)(?=$|[\s;()\[\]{}])
 
     - comment: Standard Operators
       name: keyword.operator

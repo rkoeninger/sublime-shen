@@ -64,7 +64,7 @@
 					<key>comment</key>
 					<string>Special Forms</string>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|case|trap-error|where|package|defun|/.|-&gt;|&lt;-|--&gt;|&lt;--|:=|__+|define|defmacro|defcc|defprolog|datatype)(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|cases|trap-error|where|package|defun|/.|-&gt;|&lt;-|--&gt;|&lt;--|:=|__+|define|defmacro|defcc|defprolog|datatype)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>keyword.control</string>
 				</dict>
