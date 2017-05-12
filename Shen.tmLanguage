@@ -21,52 +21,29 @@
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>comments</key>
+		<key>atoms</key>
 		<dict>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>match</key>
-					<string>\\\\.*$</string>
-					<key>name</key>
-					<string>comment.line</string>
-				</dict>
 				<dict>
 					<key>begin</key>
-					<string>\\\*</string>
+					<string>"</string>
+					<key>comment</key>
+					<string>Multiline Strings</string>
 					<key>end</key>
-					<string>\*\\</string>
+					<string>"</string>
 					<key>name</key>
-					<string>comment.block</string>
+					<string>string.quoted.double</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>(~A|~R|~S|~%|c#\d+;)</string>
+							<key>name</key>
+							<string>constant.character.escape</string>
+						</dict>
+					</array>
 				</dict>
-			</array>
-		</dict>
-		<key>expressions</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#comments</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#strings</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#literals</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#symbols</string>
-				</dict>
-			</array>
-		</dict>
-		<key>literals</key>
-		<dict>
-			<key>patterns</key>
-			<array>
 				<dict>
 					<key>comment</key>
 					<string>Numbers</string>
@@ -91,153 +68,22 @@
 					<key>name</key>
 					<string>constant.language</string>
 				</dict>
-			</array>
-		</dict>
-		<key>parens</key>
-		<dict>
-			<key>patterns</key>
-			<array>
 				<dict>
-					<key>begin</key>
-					<string>\(</string>
-					<key>end</key>
-					<string>\)</string>
-					<key>name</key>
-					<string>meta.group</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#expressions</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#parens</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#squares</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
-		<key>special</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
+					<key>comment</key>
+					<string>Special Forms</string>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|case|trap-error|where|package|defun|/.|-&gt;|&lt;-|--&gt;|&lt;--|:=|define|defmacro|defcc|defprolog|datatype)(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|case|trap-error|where|package|defun|/.|-&gt;|&lt;-|--&gt;|&lt;--|:=|__+|define|defmacro|defcc|defprolog|datatype)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>keyword.control</string>
 				</dict>
-			</array>
-		</dict>
-		<key>squares</key>
-		<dict>
-			<key>patterns</key>
-			<array>
 				<dict>
-					<key>begin</key>
-					<string>\[</string>
-					<key>end</key>
-					<string>\]</string>
-					<key>name</key>
-					<string>meta.group</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#expressions</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#parens</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#squares</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
-		<key>standard</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
+					<key>comment</key>
+					<string>Standard Operators</string>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]{}])(=|&lt;|&gt;|&lt;=|&gt;=|\+|-|\*|/|__+)(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=^|[\s()\[\]{}])(=|&lt;|&gt;|&lt;=|&gt;=|\+|-|\*|/)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>keyword.operator</string>
 				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]{}])(eval-kl|get|put|set|value|fail|not|intern|output|print|map|for-each|append|length|cons|hd|tl|cn|str|string\?|boolean\?|symbol\?|number\?|empty\?|cons\?)(?=$|[\s;()\[\]{}])</string>
-					<key>name</key>
-					<string>support.function</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]{}])\*(language|implementation|version|release|os|port|porters|home-directory|history|call|infs|process-counter|catch|tc|continue-repl-loop)\*(?=$|[\s;()\[\]{}])</string>
-					<key>name</key>
-					<string>support.variable</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]{}])(string|boolean|symbol|number|list)(?=$|[\s;()\[\]{}])</string>
-					<key>name</key>
-					<string>support.type</string>
-				</dict>
-			</array>
-		</dict>
-		<key>strings</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>"</string>
-					<key>end</key>
-					<string>"</string>
-					<key>name</key>
-					<string>string.quoted.double</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>match</key>
-							<string>(~A|~R|~S|~%|c#\d+;)</string>
-							<key>name</key>
-							<string>constant.character.escape</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
-		<key>symbols</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#special</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#standard</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#variables</string>
-				</dict>
-			</array>
-		</dict>
-		<key>variables</key>
-		<dict>
-			<key>patterns</key>
-			<array>
 				<dict>
 					<key>comment</key>
 					<string>Definition Names</string>
@@ -290,7 +136,7 @@
 					<key>comment</key>
 					<string>Local Variables</string>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]{}])([A-Z][^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=^|[\s()\[\]{}])([A-Z][^\s()\[\];{}]*)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>variable.language</string>
 				</dict>
@@ -306,9 +152,93 @@
 					<key>comment</key>
 					<string>Idle Symbols</string>
 					<key>match</key>
-					<string>(?&lt;=^|[\s)\[\]{}])([^A-Z\s()\[\]:;\|{}][^\s()\[\];]*)(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=^|[\s)\[\]{}])([^A-Z\s()\[\]:;\|{}][^\s()\[\];{}]*)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>constant.language</string>
+				</dict>
+			</array>
+		</dict>
+		<key>comments</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\\\.*$</string>
+					<key>name</key>
+					<string>comment.line</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\\\*</string>
+					<key>end</key>
+					<string>\*\\</string>
+					<key>name</key>
+					<string>comment.block</string>
+				</dict>
+			</array>
+		</dict>
+		<key>expressions</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#comments</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#atoms</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#parens</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#squares</string>
+				</dict>
+			</array>
+		</dict>
+		<key>parens</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>\(</string>
+					<key>end</key>
+					<string>\)</string>
+					<key>name</key>
+					<string>meta.group</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#expressions</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>squares</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>\[</string>
+					<key>end</key>
+					<string>\]</string>
+					<key>name</key>
+					<string>meta.group</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#expressions</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
