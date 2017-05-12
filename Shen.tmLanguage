@@ -244,9 +244,21 @@
 					<array>
 						<dict>
 							<key>match</key>
-							<string>(.*)</string>
+							<string>(/)</string>
 							<key>name</key>
-							<string>support.variable</string>
+							<string>keyword.operator</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>(-[^\s/]+)</string>
+							<key>name</key>
+							<string>entity.name.function</string>
+						</dict>
+						<dict>
+							<key>match</key>
+							<string>([^\s/\-][^\s/]*)</string>
+							<key>name</key>
+							<string>entity.name.type</string>
 						</dict>
 					</array>
 				</dict>

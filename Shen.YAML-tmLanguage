@@ -20,8 +20,12 @@ repository:
         '0': {name: keyword.control}
       end: ($)
       patterns:
-      - name: support.variable
-        match: (.*)
+      - name: keyword.operator
+        match: (/)
+      - name: entity.name.function
+        match: (-[^\s/]+)
+      - name: entity.name.type
+        match: ([^\s/\-][^\s/]*)
 
   expressions:
     patterns:

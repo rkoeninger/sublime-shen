@@ -1,4 +1,4 @@
-#!/bin/shebang
+#!/bin/she bang -x
 
 \\ single line comment
 
