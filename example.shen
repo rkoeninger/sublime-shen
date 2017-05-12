@@ -44,8 +44,7 @@
 
   (defcc <rule>
     <patterns> -> <action> where <guard> := [<patterns> [where <guard> <action>]];
-    <patterns> <- <action> where <guard>
-        := [<patterns> [where <guard> [choicepoint! <action>]]];)
+    <patterns> <- <action> where <guard> := [<patterns> [where <guard> [choicepoint! <action>]]];)
 
   (define strings ->
     (case
