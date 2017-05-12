@@ -1,0 +1,9 @@
+<snippet>
+	<description>Shen Data Type Definition</description>
+	<content><![CDATA[(datatype …
+	…;
+	____
+	… : …;)]]></content>
+	<tabTrigger>datatype</tabTrigger>
+	<scope>source.shen</scope>
+</snippet>
