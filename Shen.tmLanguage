@@ -12,6 +12,10 @@
 	<array>
 		<dict>
 			<key>include</key>
+			<string>#shebang</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#expressions</string>
 		</dict>
 	</array>
@@ -23,11 +27,11 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>"</string>
+					<string>(\")</string>
 					<key>comment</key>
 					<string>Multiline Strings</string>
 					<key>end</key>
-					<string>"</string>
+					<string>(\")</string>
 					<key>name</key>
 					<string>string.quoted.double</string>
 					<key>patterns</key>
@@ -160,15 +164,15 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\\\\.*$</string>
+					<string>(\\\\.*$)</string>
 					<key>name</key>
 					<string>comment.line</string>
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>\\\*</string>
+					<string>(\\\*)</string>
 					<key>end</key>
-					<string>\*\\</string>
+					<string>(\*\\)</string>
 					<key>name</key>
 					<string>comment.block</string>
 				</dict>
@@ -202,9 +206,9 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\(</string>
+					<string>(\()</string>
 					<key>end</key>
-					<string>\)</string>
+					<string>(\))</string>
 					<key>name</key>
 					<string>meta.group</string>
 					<key>patterns</key>
@@ -217,15 +221,46 @@
 				</dict>
 			</array>
 		</dict>
+		<key>shebang</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(\#\!)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>($)</string>
+					<key>name</key>
+					<string>meta.group</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>(.*)</string>
+							<key>name</key>
+							<string>support.variable</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 		<key>squares</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\[</string>
+					<string>(\[)</string>
 					<key>end</key>
-					<string>\]</string>
+					<string>(\])</string>
 					<key>name</key>
 					<string>meta.group</string>
 					<key>patterns</key>

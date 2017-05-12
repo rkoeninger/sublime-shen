@@ -7,9 +7,21 @@ fileTypes: [shen]
 uuid: 4f20d927-cddd-4fd7-a7a6-9739f008439d
 
 patterns:
+- include: '#shebang'
 - include: '#expressions'
 
 repository:
+
+  shebang:
+    patterns:
+    - name: meta.group
+      begin: (\#\!)
+      beginCaptures:
+        '0': {name: keyword.control}
+      end: ($)
+      patterns:
+      - name: support.variable
+        match: (.*)
 
   expressions:
     patterns:
@@ -21,24 +33,24 @@ repository:
   comments:
     patterns:
     - name: comment.line
-      match: \\\\.*$
+      match: (\\\\.*$)
     - name: comment.block
-      begin: \\\*
-      end: \*\\
+      begin: (\\\*)
+      end: (\*\\)
 
   parens:
     patterns:
     - name: meta.group
-      begin: \(
-      end: \)
+      begin: (\()
+      end: (\))
       patterns:
       - include: '#expressions'
 
   squares:
     patterns:
     - name: meta.group
-      begin: \[
-      end: \]
+      begin: (\[)
+      end: (\])
       patterns:
       - include: '#expressions'
 
@@ -46,8 +58,8 @@ repository:
     patterns:
     - comment: Multiline Strings
       name: string.quoted.double
-      begin: '"'
-      end: '"'
+      begin: (\")
+      end: (\")
       patterns:
       - match: (~A|~R|~S|~%|c#\d+;)
         name: constant.character.escape
