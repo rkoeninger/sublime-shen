@@ -60,10 +60,6 @@ repository:
       name: invalid.illegal
       match: (?<=^|[\s()\[\]])[+-]*\d+\.?\d*[^\s;()\[\]]+(?=$|[\s;()\[\]])
 
-    - comment: true, false, _ and ()
-      name: constant.language
-      match: ((?<=^|[\s()\[\]])(true|false|_)(?=$|[\s;()\[\]])|\(\))
-
     - comment: Special Forms
       name: keyword.control
       match: (?<=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|case|trap-error|where|package|defun|/.|->|<-|-->|<--|:=|__+|define|defmacro|defcc|defprolog|datatype)(?=$|[\s;()\[\]{}])
@@ -104,8 +100,12 @@ repository:
       name: entity.name.tag
       match: (?<=^|[\s()\[\]])(<[^\s()\[\]]*>)(?=$|[\s;()\[\]])
 
-    - comment: Idle Symbols
+    - comment: Idle Symbols Lists
       name: constant.language
       match: (?<=^|[\s)\[\]{}])([^A-Z\s()\[\]:;\|{}][^\s()\[\];{}]*)(?=$|[\s;()\[\]{}])
+
+    - comment: Empty Lists
+      name: constant.language
+      match: (\(\)|\[\])
 
 ...

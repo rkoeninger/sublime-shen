@@ -58,14 +58,6 @@
 				</dict>
 				<dict>
 					<key>comment</key>
-					<string>true, false, _ and ()</string>
-					<key>match</key>
-					<string>((?&lt;=^|[\s()\[\]])(true|false|_)(?=$|[\s;()\[\]])|\(\))</string>
-					<key>name</key>
-					<string>constant.language</string>
-				</dict>
-				<dict>
-					<key>comment</key>
 					<string>Special Forms</string>
 					<key>match</key>
 					<string>(?&lt;=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|case|trap-error|where|package|defun|/.|-&gt;|&lt;-|--&gt;|&lt;--|:=|__+|define|defmacro|defcc|defprolog|datatype)(?=$|[\s;()\[\]{}])</string>
@@ -146,9 +138,17 @@
 				</dict>
 				<dict>
 					<key>comment</key>
-					<string>Idle Symbols</string>
+					<string>Idle Symbols Lists</string>
 					<key>match</key>
 					<string>(?&lt;=^|[\s)\[\]{}])([^A-Z\s()\[\]:;\|{}][^\s()\[\];{}]*)(?=$|[\s;()\[\]{}])</string>
+					<key>name</key>
+					<string>constant.language</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Empty Lists</string>
+					<key>match</key>
+					<string>(\(\)|\[\])</string>
 					<key>name</key>
 					<string>constant.language</string>
 				</dict>
