@@ -53,21 +53,22 @@ repository:
       begin: '"'
       end: '"'
       patterns:
-      - match: (~A|~R|~S|~%|c#\d;|c#\d\d;|c#\d\d\d;)
+      - match: (~A|~R|~S|~%|c#\d+;)
         name: constant.character.escape
 
   literals:
     patterns:
-    - name: constant.numeric
+    - comment: Numbers
+      name: constant.numeric
       match: (?<=^|[\s()\[\]])[+-]*\d+\.?\d*(?=$|[\s;()\[\]])
-    - name: invalid.illegal
+
+    - comment: Malformed Numbers
+      name: invalid.illegal
       match: (?<=^|[\s()\[\]])[+-]*\d+\.?\d*[^\s;()\[\]]+(?=$|[\s;()\[\]])
-    - name: constant.language
-      match: (?<=^|[\s()\[\]])(true|false)(?=$|[\s;()\[\]])
-    - name: constant.language
-      match: \(\)
-    - name: constant.language
-      match: (?<=^|[\s()\[\]])_(?=$|[\s;()\[\]])
+
+    - comment: true, false, _ and ()
+      name: constant.language
+      match: ((?<=^|[\s()\[\]])(true|false|_)(?=$|[\s;()\[\]])|\(\))
 
   symbols:
     patterns:
@@ -83,7 +84,7 @@ repository:
   standard:
     patterns:
     - name: keyword.operator
-      match: (?<=^|[\s()\[\]{}])(=|<|>|<=|>=|\+|-|\*|/)(?=$|[\s;()\[\]{}])
+      match: (?<=^|[\s()\[\]{}])(=|<|>|<=|>=|\+|-|\*|/|__+)(?=$|[\s;()\[\]{}])
     - name: support.function
       match: (?<=^|[\s()\[\]{}])(eval-kl|get|put|set|value|fail|not|intern|output|print|map|for-each|append|length|cons|hd|tl|cn|str|string\?|boolean\?|symbol\?|number\?|empty\?|cons\?)(?=$|[\s;()\[\]{}])
     - name: support.variable
@@ -96,29 +97,37 @@ repository:
     - comment: Definition Names
       name: entity.name.function
       match: (?<=define\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+
     - comment: Macro Names
       name: entity.name.function
       match: (?<=defmacro\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+
     - comment: Yacc Names
       name: entity.name.tag
       match: (?<=defcc\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+
     - comment: Prolog Names
       name: entity.name.function
       match: (?<=defprolog\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+
     - comment: Package Names
       name: entity.name.section
       match: (?<=package\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+
     - comment: Data Types
       name: entity.name.type
       match: (?<=datatype\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+
     - comment: Local Variables
       name: variable.language
       match: (?<=^|[\s()\[\]{}])([A-Z][^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+
     - comment: Yacc Rule
       name: entity.name.tag
       match: (?<=^|[\s()\[\]])(<[^\s()\[\]]*>)(?=$|[\s;()\[\]])
+
     - comment: Idle Symbols
       name: constant.language
-      match: (?<=^|[\s)\[\]{}])([^A-Z\s()\[\];\|{}][^\s()\[\];]*)(?=$|[\s;()\[\]{}])
+      match: (?<=^|[\s)\[\]{}])([^A-Z\s()\[\]:;\|{}][^\s()\[\];]*)(?=$|[\s;()\[\]{}])
 
 ...
