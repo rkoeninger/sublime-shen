@@ -76,10 +76,6 @@ repository:
       name: entity.name.function
       match: (?<=defmacro\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
 
-    - comment: Yacc Names
-      name: entity.name.tag
-      match: (?<=defcc\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
-
     - comment: Prolog Names
       name: entity.name.function
       match: (?<=defprolog\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
@@ -100,7 +96,7 @@ repository:
       name: entity.name.tag
       match: (?<=^|[\s()\[\]])(<[^\s()\[\]]*>)(?=$|[\s;()\[\]])
 
-    - comment: Idle Symbols Lists
+    - comment: Idle Symbols
       name: constant.language
       match: (?<=^|[\s)\[\]{}])([^A-Z\s()\[\]:;\|{}][^\s()\[\];{}]*)(?=$|[\s;()\[\]{}])
 

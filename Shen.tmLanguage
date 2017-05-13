@@ -90,14 +90,6 @@
 				</dict>
 				<dict>
 					<key>comment</key>
-					<string>Yacc Names</string>
-					<key>match</key>
-					<string>(?&lt;=defcc\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
-					<key>name</key>
-					<string>entity.name.tag</string>
-				</dict>
-				<dict>
-					<key>comment</key>
 					<string>Prolog Names</string>
 					<key>match</key>
 					<string>(?&lt;=defprolog\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
@@ -138,7 +130,7 @@
 				</dict>
 				<dict>
 					<key>comment</key>
-					<string>Idle Symbols Lists</string>
+					<string>Idle Symbols</string>
 					<key>match</key>
 					<string>(?&lt;=^|[\s)\[\]{}])([^A-Z\s()\[\]:;\|{}][^\s()\[\];{}]*)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
