@@ -1,5 +1,3 @@
-#!/bin/she bang -x
-
 \\ single line comment
 
 "root-level string"
