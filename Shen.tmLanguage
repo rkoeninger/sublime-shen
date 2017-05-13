@@ -12,10 +12,6 @@
 	<array>
 		<dict>
 			<key>include</key>
-			<string>#shebang</string>
-		</dict>
-		<dict>
-			<key>include</key>
 			<string>#expressions</string>
 		</dict>
 	</array>
@@ -216,49 +212,6 @@
 						<dict>
 							<key>include</key>
 							<string>#expressions</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
-		<key>shebang</key>
-		<dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>(\#\!)</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.control</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>($)</string>
-					<key>name</key>
-					<string>meta.group</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>match</key>
-							<string>(/)</string>
-							<key>name</key>
-							<string>keyword.operator</string>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>(-[^\s/]+)</string>
-							<key>name</key>
-							<string>entity.name.function</string>
-						</dict>
-						<dict>
-							<key>match</key>
-							<string>([^\s/\-][^\s/]*)</string>
-							<key>name</key>
-							<string>entity.name.type</string>
 						</dict>
 					</array>
 				</dict>

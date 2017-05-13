@@ -7,25 +7,9 @@ fileTypes: [shen]
 uuid: 4f20d927-cddd-4fd7-a7a6-9739f008439d
 
 patterns:
-- include: '#shebang'
 - include: '#expressions'
 
 repository:
-
-  shebang:
-    patterns:
-    - name: meta.group
-      begin: (\#\!)
-      beginCaptures:
-        '0': {name: keyword.control}
-      end: ($)
-      patterns:
-      - name: keyword.operator
-        match: (/)
-      - name: entity.name.function
-        match: (-[^\s/]+)
-      - name: entity.name.type
-        match: ([^\s/\-][^\s/]*)
 
   expressions:
     patterns:
