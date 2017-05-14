@@ -70,23 +70,23 @@ repository:
 
     - comment: Definition Names
       name: entity.name.function
-      match: (?<=define\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+      match: (?<=\(define\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
 
     - comment: Macro Names
       name: entity.name.function
-      match: (?<=defmacro\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+      match: (?<=\(defmacro\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
 
     - comment: Prolog Names
       name: entity.name.function
-      match: (?<=defprolog\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+      match: (?<=\(defprolog\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
 
     - comment: Package Names
       name: entity.name.section
-      match: (?<=package\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+      match: (?<=\(package\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
 
     - comment: Data Types
       name: entity.name.type
-      match: (?<=datatype\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
+      match: (?<=\(datatype\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])
 
     - comment: Local Variables
       name: variable.language

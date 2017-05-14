@@ -76,7 +76,7 @@
 					<key>comment</key>
 					<string>Definition Names</string>
 					<key>match</key>
-					<string>(?&lt;=define\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=\(define\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>entity.name.function</string>
 				</dict>
@@ -84,7 +84,7 @@
 					<key>comment</key>
 					<string>Macro Names</string>
 					<key>match</key>
-					<string>(?&lt;=defmacro\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=\(defmacro\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>entity.name.function</string>
 				</dict>
@@ -92,7 +92,7 @@
 					<key>comment</key>
 					<string>Prolog Names</string>
 					<key>match</key>
-					<string>(?&lt;=defprolog\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=\(defprolog\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>entity.name.function</string>
 				</dict>
@@ -100,7 +100,7 @@
 					<key>comment</key>
 					<string>Package Names</string>
 					<key>match</key>
-					<string>(?&lt;=package\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=\(package\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>entity.name.section</string>
 				</dict>
@@ -108,7 +108,7 @@
 					<key>comment</key>
 					<string>Data Types</string>
 					<key>match</key>
-					<string>(?&lt;=datatype\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=\(datatype\s)([^\s()\[\]{}]*)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>entity.name.type</string>
 				</dict>
