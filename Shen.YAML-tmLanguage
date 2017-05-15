@@ -66,11 +66,11 @@ repository:
 
     - comment: Special Operators
       name: keyword.control
-      match: (?<=^|[\s()\[\]{}])(->|<-|-->|<--|:=|__+)(?=$|[\s;()\[\]{}])
+      match: (?<=^|[\s()\[\]{}])(->|<-|-->|<--|==>|<==|:=|__+)(?=$|[\s;()\[\]{}])
 
     - comment: Standard Operators
       name: keyword.operator
-      match: (?<=^|[\s()\[\]{}])(=|<|>|<=|>=|\+|-|\*|/)(?=$|[\s;()\[\]{}])
+      match: (?<=^|[\s()\[\]{}])(=|==|<|>|<=|>=|\+|-|\*|/)(?=$|[\s;()\[\]{}])
 
     - comment: Definition Names
       name: entity.name.function
