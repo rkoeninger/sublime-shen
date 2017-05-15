@@ -3,6 +3,54 @@ import sublime_plugin
 import sys
 import os
 
+class Syntax(object):
+	def __init__(self, raw):
+		self.raw = raw
+
+class LineComment(Syntax):
+	def __init__(self, raw, content):
+		Base.__init__(self, raw)
+		self.content = content
+
+class BlockComment(Syntax):
+	def __init__(self, raw, content):
+		Base.__init__(self, raw)
+		self.content = content
+
+class Expression(Syntax):
+	def __init__(self, raw):
+		Base.__init__(self, raw)
+
+class Define(Expression):
+	def __init__(self, raw, name, arity, typesig, clauses):
+		Base.__init__(self, raw)
+		self.name = name
+		self.arity = arity
+		self.typesig = typesig
+		self.clauses = clauses
+
+class Clause(Expression):
+	def __init__(self, raw, params, backtrack, body, guard):
+		Base.__init__(self, raw)
+		self.params = params
+		self.backtrack = backtrack
+		self.body = body
+		self.guard = guard
+
+class Cons(Expression):
+	def __init__(self, raw, elements, tail):
+		Base.__init__(self, raw)
+		self.elements = elements
+		self.tail = tail
+
+class Application(Expression):
+	def __init__(self, raw, elements):
+		Base.__init__(self, raw)
+		self.elements = elements
+
+# also need special forms for:
+#   if, cases, cond, defmacro, defprolog, defcc, datatype, package
+
 class ShenFormatCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		print 'format_shen begin'
