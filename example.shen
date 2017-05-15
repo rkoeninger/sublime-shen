@@ -26,7 +26,7 @@
      comment *\
 
   (define typed-function {A --> (list A) --> boolean}
-    _ [] -> (true 0123 false)
+    _ [] -> [true define 0123 false] (f true define +323)
     X [X | _] -> true \\ end of line comment
     X [{ | Xs] -> [0a X Xs ()])
 

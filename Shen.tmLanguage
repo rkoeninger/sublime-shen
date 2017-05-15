@@ -60,7 +60,15 @@
 					<key>comment</key>
 					<string>Special Forms</string>
 					<key>match</key>
-					<string>(?&lt;=^|[\s()\[\]{}])(and|or|if|do|lambda|freeze|let|cond|cases|trap-error|where|package|defun|/.|-&gt;|&lt;-|--&gt;|&lt;--|:=|__+|define|defmacro|defcc|defprolog|datatype)(?=$|[\s;()\[\]{}])</string>
+					<string>(?&lt;=\()(and|or|if|do|lambda|freeze|let|cond|cases|trap-error|where|package|defun|/.|define|defmacro|defcc|defprolog|datatype)(?=$|[\s;()\[\]{}])</string>
+					<key>name</key>
+					<string>keyword.control</string>
+				</dict>
+				<dict>
+					<key>comment</key>
+					<string>Special Operators</string>
+					<key>match</key>
+					<string>(?&lt;=^|[\s()\[\]{}])(-&gt;|&lt;-|--&gt;|&lt;--|:=|__+)(?=$|[\s;()\[\]{}])</string>
 					<key>name</key>
 					<string>keyword.control</string>
 				</dict>
