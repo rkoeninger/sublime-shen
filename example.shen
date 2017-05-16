@@ -47,7 +47,7 @@
   (define strings ->
     (cases
       (= X (and Y Z))
-        (output "~%Shen, copyright c#123; 2010-2015 Mark Tarver~%")
+        (output "~%Shen, copyright c#123; c#dfc; 2010-2015 c#; Mark Tarver~%")
       (not (< Qwe Asd))
         (output "www.shenlanguage.org, ~A~%" (value *version*))
       true

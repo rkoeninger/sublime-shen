@@ -38,6 +38,12 @@
 							<key>name</key>
 							<string>constant.character.escape</string>
 						</dict>
+						<dict>
+							<key>match</key>
+							<string>(c#[^;]*;)</string>
+							<key>name</key>
+							<string>invalid.illegal</string>
+						</dict>
 					</array>
 				</dict>
 				<dict>

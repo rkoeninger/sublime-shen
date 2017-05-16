@@ -51,6 +51,8 @@ repository:
       patterns:
       - match: (~A|~R|~S|~%|c#\d+;)
         name: constant.character.escape
+      - match: (c#[^;]*;)
+        name: invalid.illegal
 
     - comment: Numbers
       name: constant.numeric
