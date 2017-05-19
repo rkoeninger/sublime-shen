@@ -8,6 +8,10 @@
   * Comments - Applies Shen-style single line (`\\`) and multi-line (`\* ... *\`) comments using standard commands/shortcuts.
   * Snippets - generate skeleton forms for `define`, `defmacro`, `defcc`, `defprolog`, etc.
 
+## Preview
+
+![Screenshot](https://raw.githubusercontent.com/rkoeninger/sublime-shen/master/screenshot.png)
+
 ## Automatic Installation
 
 **[PENDING PR ACCEPTANCE](https://github.com/wbond/package_control_channel/pull/6297)** Sublime/Shen is available from [Package Control](https://packagecontrol.io/) under the name `Shen`.
