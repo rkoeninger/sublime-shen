@@ -14,7 +14,7 @@
 
 ## Automatic Installation
 
-**[PENDING PR ACCEPTANCE](https://github.com/wbond/package_control_channel/pull/6297)** Sublime/Shen is available from [Package Control](https://packagecontrol.io/) under the name `Shen`.
+Sublime/Shen is available from [Package Control](https://packagecontrol.io/packages/Shen) under the name `Shen`.
 
 ## Manual Installation
 
