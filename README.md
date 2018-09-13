@@ -14,7 +14,7 @@
 
 ## Installation
 
-Sublime/Factor is available from [Package Control](https://packagecontrol.io/packages/Factor) under the name `Factor`.
+Sublime/Factor is available from [Package Control](https://packagecontrol.io/packages/Shen) under the name `Shen`.
 
 ## Future Work
 
