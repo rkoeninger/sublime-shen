@@ -12,17 +12,9 @@
 
 ![Screenshot](https://raw.githubusercontent.com/rkoeninger/sublime-shen/master/screenshot.png)
 
-## Automatic Installation
+## Installation
 
-Sublime/Shen is available from [Package Control](https://packagecontrol.io/packages/Shen) under the name `Shen`.
-
-## Manual Installation
-
-Download this repo as an archive or `git clone` it under the `Packages` directory under your Sublime user path.
-
-On Windows, this is something like `C:\Users\%USER_NAME%\AppData\Roaming\Sublime Text 3\Packages`.
-
-Once the `sublime-shen` package is in place, just restart Sublime, and it should be ready to go.
+Sublime/Factor is available from [Package Control](https://packagecontrol.io/packages/Factor) under the name `Factor`.
 
 ## Future Work
 
